@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 from random import randint, seed
-
+import numpy as np
 # Travando a aleatoriedade da cartela
 seed(1)#If you use the same seed value twice you will get the same random number twice
 
@@ -87,7 +87,14 @@ def marca_numero(cartela: defaultdict, letra: str, numero: int, caracter: str):
 # Passo 2:
 def numero_existe(cartela, letra, numero):
     if numero in cartela[letra]:
-        print("Você acertou um número!")
+        # print("Você acertou um número!")
         return True
-    print("Você errou!")
+    # print("Você errou!")
+    return False
+
+def verify_bingo(cartela:dict())->bool:
+    cartela_matrix=np.array(list(cartela.values()))
+    for i in range(5):
+        if list(cartela_matrix[:,i])==["XX"]*5 or list(cartela_matrix[i,:])==["XX"]*5:
+            return True
     return False

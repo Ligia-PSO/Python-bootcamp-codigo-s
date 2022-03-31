@@ -37,17 +37,24 @@ Passo número desafio:
     * O número máximo de sorteios para que a cartela seja vencedora
 """
 
+import array
 import cartela
 import sorteio
-from termcolor import colored
 
-cartela_1 = cartela.gerar()
+cartela_init = cartela.gerar()
 
-cartela.imprime(cartela_1)
+def bingo_sim(cartela_init:dict(),draw_number:int):
+    list_num_draws=list()
+    list_num_draws=[sorteio.run_bingo(cartela_init) for _ in range(1000)]
+    
+    mean_draws=sum(list_num_draws)/len(list_num_draws)
+    min_draws=min(list_num_draws)
+    max_draws=max(list_num_draws)
+    
+    print(f"\nQuantidade de cartelas sorteadas: {draw_number} ")
+    print(f"\nMédia de sorteios por jogo: {mean_draws}")
+    print(f"\nO numero de sorteios minimos para um BINGO: {min_draws}")
+    print(f"\nO numero de sorteios maximo para um BINGO: {max_draws}")
 
-letra_sorteada, numero_sorteado = sorteio.sorteia()
-
-if cartela.numero_existe(cartela_1, letra_sorteada, numero_sorteado):
-    cartela_1 = cartela.marca_numero(cartela_1, letra_sorteada, numero_sorteado, colored(str(numero_sorteado), 'yellow'))
-
-cartela.imprime(cartela_1)
+sorteio.run_bingo(cartela_init,50)
+bingo_sim(cartela_init,1000)
