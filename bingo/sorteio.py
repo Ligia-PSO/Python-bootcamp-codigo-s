@@ -21,14 +21,17 @@ def sorteia():
 
     return letra_sorteada, numero_sorteado
 
-
-def run_bingo(cartela_input:dict(),number_of_sorts:int or None=None)->int or None:
+"""
+ run_bingo-> if not given a number will return the number of draws necessary to have a winner 
+             if given a number will print the cartela and inform if you won with those numbers of draws
+"""
+def run_bingo(cartela_input:dict,number_of_sorts:int or None=None)->int or None:
 # returns number of sorteios necessarios
-    cartela_1=copy.deepcopy(cartela_input)#need to use deepcopy becuse i dontwant them to point to the same value just a second copy dictionary
+    cartela_1=copy.deepcopy(cartela_input)#need to use deepcopy to create an idependent clone of the dictionary
     cartela_show=copy.deepcopy(cartela_input)
    
     if number_of_sorts==None:
-        num_draws=0
+        num_draws=0 #number of draws until a bingo occurence
         while cartela.verify_bingo(cartela_1)==False:
             letra_sorteada, numero_sorteado = sorteia()
             # letra_sorteada, numero_sorteado="N",36
@@ -36,9 +39,8 @@ def run_bingo(cartela_input:dict(),number_of_sorts:int or None=None)->int or Non
                 cartela_1= cartela.marca_numero(cartela_1, letra_sorteada, numero_sorteado, "XX")
 
             num_draws+=1        
+        return num_draws 
 
-        # cartela.imprime(cartela_show)
-        return num_draws #number of draws until a bingo occurence
     else:
         for _ in range(number_of_sorts):
             letra_sorteada, numero_sorteado = sorteia()
@@ -54,4 +56,3 @@ def run_bingo(cartela_input:dict(),number_of_sorts:int or None=None)->int or Non
             return()
 
         print(f"\nNao foi possivel obter BINGO com {number_of_sorts} sorteios")
-        return()

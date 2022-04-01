@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 from random import randint, seed
-import numpy as np
+from numpy import array
 # Travando a aleatoriedade da cartela
 seed(1)#If you use the same seed value twice you will get the same random number twice
 
@@ -53,7 +53,7 @@ def gerar() -> defaultdict():
 
 
 # Passo número 1:
-def imprime(cartela: dict()) -> None:
+def imprime(cartela: dict) -> None:
     """Formata a cartela para imprimir na tela
 
     Args:
@@ -92,9 +92,15 @@ def numero_existe(cartela, letra, numero):
     # print("Você errou!")
     return False
 
-def verify_bingo(cartela:dict())->bool:
-    cartela_matrix=np.array(list(cartela.values()))
+def verify_bingo(cartela:dict)->bool:
+    cartela_matrix=array(list(cartela.values()))
+
+    #check bingo on diagonal
+    if ["XX"]*5 in map(list,[cartela_matrix.diagonal(0),cartela_matrix.diagonal(1)]):
+        return True
+
+    #check bingo on columns and rows
     for i in range(5):
-        if list(cartela_matrix[:,i])==["XX"]*5 or list(cartela_matrix[i,:])==["XX"]*5:
+        if ["XX"]*5 in map(list,[cartela_matrix[:,i],cartela_matrix[i,:]]):
             return True
     return False

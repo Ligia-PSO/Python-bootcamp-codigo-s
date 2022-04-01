@@ -40,21 +40,24 @@ Passo número desafio:
 import array
 import cartela
 import sorteio
+from statistics import mean
 
 cartela_init = cartela.gerar()
+sorteio.run_bingo(cartela_init,50) #if given a number will print the cartela and inform if you won with those numbers of draws
 
-def bingo_sim(cartela_init:dict(),draw_number:int):
-    list_num_draws=list()
-    list_num_draws=[sorteio.run_bingo(cartela_init) for _ in range(1000)]
-    
-    mean_draws=sum(list_num_draws)/len(list_num_draws)
-    min_draws=min(list_num_draws)
-    max_draws=max(list_num_draws)
-    
-    print(f"\nQuantidade de cartelas sorteadas: {draw_number} ")
-    print(f"\nMédia de sorteios por jogo: {mean_draws}")
-    print(f"\nO numero de sorteios minimos para um BINGO: {min_draws}")
-    print(f"\nO numero de sorteios maximo para um BINGO: {max_draws}")
+draw_number=1000
 
-sorteio.run_bingo(cartela_init,50)
-bingo_sim(cartela_init,1000)
+print(f"\n=====| Statistics of a BINGO game involving {draw_number} draws |=======\n")
+
+list_num_draws=list()
+list_num_draws=[sorteio.run_bingo(cartela_init) for _ in range(draw_number)]
+
+print(f"          Quantidade de cartelas sorteadas: {draw_number} ")
+print(f"                Média de sorteios por jogo: {mean(list_num_draws)}")
+print(f"O numero de sorteios minimos para um BINGO: {min(list_num_draws)}")
+print(f" O numero de sorteios maximo para um BINGO: {max(list_num_draws)}")
+
+print("\n======================| End of results |==========================")
+
+
+
