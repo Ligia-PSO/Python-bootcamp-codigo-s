@@ -57,7 +57,7 @@ print(f"                Média de sorteios por jogo: {mean(list_num_draws)}")
 print(f"O numero de sorteios minimos para um BINGO: {min(list_num_draws)}")
 print(f" O numero de sorteios maximo para um BINGO: {max(list_num_draws)}")
 
-# print("\n======================| End of results |==========================")
+print("\n======================| End of results |==========================")
 
 
 
