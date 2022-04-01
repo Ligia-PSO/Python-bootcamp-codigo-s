@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 from random import randint, seed
-from numpy import array
+from numpy import array,fliplr
 # Travando a aleatoriedade da cartela
 seed(1)#If you use the same seed value twice you will get the same random number twice
 
@@ -96,7 +96,7 @@ def verify_bingo(cartela:dict)->bool:
     cartela_matrix=array(list(cartela.values()))
 
     #check bingo on diagonal
-    if ["XX"]*5 in map(list,[cartela_matrix.diagonal(0),cartela_matrix.diagonal(1)]):
+    if ["XX"]*5 in map(list,[cartela_matrix.diagonal(0),fliplr(cartela_matrix).diagonal(0)]):
         return True
 
     #check bingo on columns and rows

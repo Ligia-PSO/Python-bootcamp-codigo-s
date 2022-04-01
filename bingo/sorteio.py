@@ -1,6 +1,5 @@
 """Módulo para gerar números aleatórios"""
 import cartela
-import numpy as np
 import copy
 from random import choice,randint,seed
 from termcolor import colored

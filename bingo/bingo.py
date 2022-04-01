@@ -37,12 +37,12 @@ Passo número desafio:
     * O número máximo de sorteios para que a cartela seja vencedora
 """
 
-import array
 import cartela
 import sorteio
 from statistics import mean
 
 cartela_init = cartela.gerar()
+# cartela.imprime(cartela_init)
 sorteio.run_bingo(cartela_init,50) #if given a number will print the cartela and inform if you won with those numbers of draws
 
 draw_number=1000
@@ -57,7 +57,7 @@ print(f"                Média de sorteios por jogo: {mean(list_num_draws)}")
 print(f"O numero de sorteios minimos para um BINGO: {min(list_num_draws)}")
 print(f" O numero de sorteios maximo para um BINGO: {max(list_num_draws)}")
 
-print("\n======================| End of results |==========================")
+# print("\n======================| End of results |==========================")
 
 
 
