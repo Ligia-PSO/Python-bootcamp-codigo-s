@@ -47,14 +47,17 @@ Embaralha palavras: Construa uma funcao que receba uma string como parametro e d
 Por exemplo: se funcao receber a palavra python, pode retornar npthyo, ophtyn ou qualquer outra combinacao possivel, de forma aleatoria.
  Padronize em sua funcao que todos os caracteres serao devolvidos em caixa alta ou caixa baixa, independentemente de como foram digitados.
 """
-from random import choice
+from random import choice, randint
 from xml.dom.minicompat import StringTypes
 def ex4():
     string_list=[letter for letter in input("Digite uma string: ")]
     string_out=""
     for _ in range(len(string_list)):
         random_letter=choice(string_list)
-        string_out+=random_letter
+        if randint(0,1)==1:
+            string_out+=random_letter.swapcase()
+        else:
+            string_out+=random_letter
         string_list.remove(random_letter)
     print(string_out)
 # ex4()
