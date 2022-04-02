@@ -36,7 +36,10 @@ for file in onlyfiles:
             elif line=="":
                 python_file.write(line)
             else:
-                python_file.write(line+"\n")  
+                if len(line)>150:#line is too big and next sentence should be placed on line bellow for better reading
+                    python_file.write(line[:line.index(".")+1]+"\n"+line[line.index(".")+1:]+"\n")
+                else:
+                    python_file.write(line+"\n")  
 
         python_file.write('"""')
         python_file.close()
