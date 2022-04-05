@@ -39,10 +39,9 @@ def ex2():
     for i in range(1,11):
         list_1.append(input(f"give list element {i} of 10 :"))
 
-    else:
-        list_1.reverse()
-        for element in list_1:
-            print(element)
+    list_1.reverse()
+    for element in list_1:
+        print(element)
 
 """================================================Exercicio 3:========================================================================
 
@@ -79,9 +78,8 @@ def ex4():
     import calendar
 
     temp_year_data=dict()
-    months=list(calendar.month_name)[1:]
-    for i in range(len(months)):
-        specific_month=months[i]
+    month_list=list(calendar.month_name)[1:]
+    for specific_month in month_list:
         temp_year_data[specific_month]=float(input(f"Give the mean temperture for the month of {specific_month}:"))
 
     mean_yearly=sum(temp_year_data.values())/12
@@ -119,6 +117,23 @@ def ex6():
         if value=="":
             list.pop(i)
     print(list)
+# ============GABARITO=============
+# lst = ["Olá", "", "meu", "nome", "", "é", "facilitador", ""]
+
+# # Inicializa outra lista vazia, onde vamos colocar as strings que não são vazias
+# lst_sem_str_vazias = []
+
+# # Laço para percorrer todas as palavras da lista, incluindo as strings vazias
+# for palavra in lst:
+
+#     # Se a string não for vazia (sim, isso é uma condição!)
+#     if palavra:
+
+#         # Adiciona a palavra à lista de strings não vazias
+#         lst_sem_str_vazias.append(palavra)
+
+# print(lst_sem_str_vazias)
+
 
 """================================================Exercicio 7:========================================================================
 

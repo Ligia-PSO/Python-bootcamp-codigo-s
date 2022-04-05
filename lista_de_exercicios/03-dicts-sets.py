@@ -29,11 +29,12 @@ Maria Magalhaes
 Marrone Gutierres
 Joaquina Ferreira da Silva
 Faca um programa que responda as seguintes perguntas:
-Quantos alunos estao matriculados na escola, no total?
-Quantos e quais estao matriculados APENAS em INGLES?
-Quantos e quais estao matriculados APENAS em FRANCES?
-Quantos e quais estao matriculados EM AMBOS os cursos?
-Quantos alunos estao matriculados somente em frances ou somente em ingles, mas nao em ambos os cursos?
+
+1.	Quantos alunos estão matriculados na escola, no total?
+2.	Quantos e quais estão matriculados APENAS em INGLES?
+3.	Quantos e quais estão matriculados APENAS em FRANCES?
+4.	Quantos e quais estão matriculados EM AMBOS os cursos?
+5.	Quantos alunos estão matriculados somente em francês ou somente em inglês, mas não em ambos os cursos?
 """
 from numpy import sort
 
@@ -46,12 +47,13 @@ def ex1():
     set_french={"Joao Alves dos Santos","Antonio da Silva Ferreira","Fernanda Abdala Mohamed",
     "Abner Mignon Alib","Alisson Figueiredo","Henrique da Silva Sauro","Maria Magalhaes","Marrone Gutierres","Joaquina Ferreira da Silva"}
     
-    print(f"Quantos alunos estao matriculados na escola, no total? {len(set_english.union(set_french))}")
-    print(f"Quantos e quais estao matriculados APENAS em INGLES?\n Matriculados apenas em ingles {len(set_english)}\n e sao os alunos {set_english}")
-    print(f"Quantos e quais estao matriculados APENAS em FRANCES?\n Matriculados apenas em frences {len(set_french)}\n e sao os alunos {set_french}")
-    print(f"Quantos e quais estao matriculados EM AMBOS os cursos?\n Matriculados em ambos {len(set_french&set_english)}\n e sao:{set_french&set_english}")
-    print(f"Quantos alunos estao matriculados somente em frances ou somente em ingles, mas nao em ambos os cursos?\n Somente em ingles: {len(set_english-set_french)}\n Somente em frances: {len(set_french-set_english)}\n para um total de: {len(set_english-set_french)+len(set_french-set_english)}")
+    print(f"Resp 1) - {len(set_english.union(set_french))}")
+    print(f"Resp 2) - {len(set_english)-len(set_french)} e sao os alunos {set_english-set_french}")
+    print(f"Resp 3) - Matriculados apenas em frences {len(set_french)-len(set_english)} e sao os alunos {set_french- set_english}")
+    print(f"Resp 4) - Matriculados em ambos {len(set_french&set_english)}\n e sao:{set_french&set_english}")
+    print(f"Resp 5) -  Somente em ingles: {len(set_english-set_french)}\n Somente em frances: {len(set_french-set_english)}\n para um total de: {len(set_english-set_french)+len(set_french-set_english)}")
 
+    # print(f"Resp 5) - {len(alunos_ingles.symmetric_difference(alunos_frances))}")
 # ex1()
 
 """================================================Exercicio 2:========================================================================
@@ -84,10 +86,26 @@ def ex3():
         reordered[key_list[pos_value_in_list]]=i
 
     print(reordered)
-
-
 # ex3()
 
+"""=================GABARITO====================================
+### Explicação!
+# Usei a função `sorted` para ordenar nosso dicionário passando algun argumentos extras
+# Link da documentação oficial da função `sorted`: https://docs.python.org/3/library/functions.html#sorted
+
+# dict_to_order.items() -> retorna uma lista de tuplas com chaves e valores de um dicionário: [("matemática", 81), ("física", 83), ("química", 87)]
+# O argumento `key` precisa ser uma função (veja na documentação oficial).
+# Para esse argumento usei uma função anônima lambda que faz o seguinte: dado uma tupla, retorna o segundo valor dela (índice 1)
+# Obs: lembre-se que a indexação começa por zero, então o índice 1 é o segundo valor, que refere-se aos valores do dicionário
+
+# Basicamente o argumento `key` está nos dizendo que devemos ordenar pelos segundos elementos das tuplas de chave-valor!
+# Usamos o argumento `reverse=True` para definir a ordem decrescente
+
+# O resultado disso tudo é uma lista de tuplas ordenadas pelo segundo elemento (valor do dicionário)
+# [("química", 87), ("física", 83), ("matemática", 81)]
+ordered_dict = dict(sorted(dict_to_order.items(), key=lambda tupla: tupla[1], reverse=True))
+
+"""
 """================================================Exercicio 4:========================================================================
 Escreva um programa para encontrar o tamanho do comprimento das strings nos valores de dicionario. Exemplo: dada o dicionario
 >>> {1: "vermelho", 2: "azul", 3: "marrom"}
