@@ -2,7 +2,6 @@
 from collections import defaultdict
 import os
 from itertools import chain
-from random import choice
 
 #use mypath variable so terminal can be run on any terminal location
 def print_map(map_matrix:list)->None:
