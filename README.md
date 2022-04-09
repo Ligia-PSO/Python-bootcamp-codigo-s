@@ -20,14 +20,15 @@ Projetos criados com:
 <a><img align="left" src=https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg width="21px"/></a>
 <font color='lightgreen'>Python version:  3.9.6</font>
 
+---
 <h2 align="left"> Tabela de conteudo </h2>
 
   - [Conteudo do Bootcamp](#conteudo-do-bootcamp)
-
-  - [Bigger Projects](#bigger-projects)
-  
+  - [Lista de exercicios](#lista-de-exercicios)
+  - [Code Wars](#Code-Wars)
+  - [Projetos](#projetos)
   - [Contato](#contato)
-
+___
 ##  Conteudo do Bootcamp
 * MÓDULO I COM 36 HORAS:
   - Introdução
@@ -43,8 +44,7 @@ Projetos criados com:
   
   - Orientação a objetos
   - Tratamento de erros e exceções
-
-
+  
   how_bootcamps
   - Persistência e serialização
   - Testes unitários
@@ -52,13 +52,18 @@ Projetos criados com:
   - Banco de Dados - SQL
   - Django
   - Projetos e Portfólio                                                                     
-                     
+___                
 ## Lista de exercicios
 * [lista de exercicios](./lista_de_exercicios/)
-##  Bigger Projects
-
-* [Bingo](./projects/bingo/)
+___
+## Code Wars
+* [Code Wars #1](./Code_wars/Code_wars_1/)
   
+##  Projetos 
+* [Bingo](./projects/bingo/)
+* [Jogo da forca](./projects/jogo_da_forca/)
+* [Labirinto](./projects/labirinto/)
+___
 ##  Contato
 
 <p align="left">
