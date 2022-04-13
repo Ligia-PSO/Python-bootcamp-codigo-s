@@ -3,11 +3,11 @@
 ## Projeto em equipe do Bootcamp Código[s] - Stone 
 
 #### Equipe 43:				
-* Henrique Cezar Cândido Xavier Ferreira					
+* [Henrique Cezar Cândido Xavier Ferreira](https://github.com/henrique-cxf)					
 * Letícia Arroyo Torres
-* Lígia Pereira Silva de Oliveira
-* Lucas Borges Fernandes								
-* Vinicius Miranda Santos								
+* [Lígia Pereira Silva de Oliveira](https://github.com/Ligia-PSO)
+* [Lucas Borges Fernandes](https://github.com/LucasBF00)								
+* [Vinicius Miranda Santos](https://github.com/vinicius261)								
 ___
 
 ### Definições do Projeto

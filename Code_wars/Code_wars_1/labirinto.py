@@ -1,10 +1,10 @@
-"""===============|Grupo|===================
-Lígia Pereira Silva de Oliveira								
-Letícia Arroyo Torres								
-Henrique Cezar Cândido Xavier Ferreira								
-Lucas Borges Fernandes								
-Vinicius Miranda Santos								
-========================================="""
+"""===============|Grupo|==================================================
+Lígia Pereira Silva de Oliveira---------(https://github.com/Ligia-PSO)								
+Letícia Arroyo Torres-------------------(______________________________)								
+Henrique Cezar Cândido Xavier Ferreira--(https://github.com/henrique-cxf)								
+Lucas Borges Fernandes------------------(https://github.com/LucasBF00)								
+Vinicius Miranda Santos-----------------(https://github.com/vinicius261)						
+==========================================================================="""
 from time import sleep
 from generate_map import generate_maze
 
