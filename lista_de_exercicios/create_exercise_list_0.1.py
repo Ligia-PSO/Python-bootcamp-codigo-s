@@ -18,12 +18,12 @@ import os
 import textract
 import unidecode
 mypath= os.path.dirname(os.path.realpath(__file__))#returns current directory of python script
-# print(mypath)
+print(mypath)
 onlyfiles = [f for f in os.listdir(mypath) if os.path.isfile(os.path.abspath(f))]#list of the file elements in the folder
-
+# print(onlyfiles)
 for file in onlyfiles:
-    if ".docx" in file:#identify word document on directory 
-        python_file = open(mypath+"\\"+ file[:file.index(".docx")]+".py", "w")#create python file of the same name as the word file on the current directory
+    if ".pdf" in file or ".docx" in file:#identify word document on directory 
+        python_file = open(mypath+"\\"+ file[:file.index(".")]+".py", "w")#create python file of the same name as the word file on the current directory
         text = textract.process(file)#extract text from microsoft word file
         text = unidecode.unidecode(text.decode("utf-8")) #convert the object text to a string and remove the accents on the string
         # print(text)
@@ -32,7 +32,7 @@ for file in onlyfiles:
         python_file.write('"""') 
         for line in text_lines:
             if "Exerc" in line or "Desaf"in line:#desafio e exercicio
-                python_file.write(f'"""\n\n\n"""================================================{line}========================================================================\n')
+                python_file.write(f'"""\n\n"""{"="*15}{line[:-1]}{"="*15}\n')
             elif line=="":
                 python_file.write(line)
             else:
@@ -43,4 +43,3 @@ for file in onlyfiles:
 
         python_file.write('"""')
         python_file.close()
-        
